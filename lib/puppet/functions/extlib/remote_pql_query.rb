@@ -75,7 +75,7 @@ Puppet::Functions.create_function(:'extlib::remote_pql_query') do
           'key' => keyfile.path,
           'cert' => certfile.path,
           'ca_file' => cafile.path,
-        }
+        },
       }
 
       remote_pql_query(query, options, client_options)
@@ -96,7 +96,7 @@ Puppet::Functions.create_function(:'extlib::remote_pql_query') do
     # If the dalen/puppetdbquery module is installed, then there'll be a clash
     # of libraries/namespaces and we need to manually require the files from
     # puppetdb-ruby...
-    unless PuppetDB.constants.include?(:Client)
+    unless PuppetDB.const_defined?(:Client)
       require 'puppetdb/client'
       require 'puppetdb/query'
       require 'puppetdb/response'
@@ -110,7 +110,7 @@ Puppet::Functions.create_function(:'extlib::remote_pql_query') do
       response = client.request(
         '', # PQL
         query,
-        query_options
+        query_options,
       )
 
       response.data

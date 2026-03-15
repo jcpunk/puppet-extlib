@@ -6,7 +6,7 @@ describe 'extlib::file_separator' do
   describe 'windows' do
     let(:facts) do
       {
-        kernel: 'windows'
+        kernel: 'windows',
       }
     end
 
@@ -16,7 +16,7 @@ describe 'extlib::file_separator' do
   describe 'not_windows' do
     let(:facts) do
       {
-        kernel: 'linux'
+        kernel: 'linux',
       }
     end
 

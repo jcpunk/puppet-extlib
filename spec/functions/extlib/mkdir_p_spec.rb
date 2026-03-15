@@ -9,14 +9,14 @@ describe 'extlib::mkdir_p' do
     end
     let(:facts) do
       {
-        kernel: 'windows'
+        kernel: 'windows',
       }
     end
 
     it {
       is_expected.to run.with_params(dirs).and_return(['/c', '/c/windows', '/c/windows/puppetlabs',
                                                        '/c/windows/puppetlabs/puppet', '/c/windows/puppetlabs/puppet/embedded',
-                                                       '/c/windows/puppetlabs/puppet/embedded/gems'])
+                                                       '/c/windows/puppetlabs/puppet/embedded/gems',])
     }
 
     describe 'multiple_dirs' do
@@ -28,7 +28,7 @@ describe 'extlib::mkdir_p' do
         is_expected.to run.with_params(dirs).and_return(['/c', '/c/temp', '/c/temp/gems',
                                                          '/c/windows', '/c/windows/puppetlabs', '/c/windows/puppetlabs/puppet',
                                                          '/c/windows/puppetlabs/puppet/embedded',
-                                                         '/c/windows/puppetlabs/puppet/embedded/gems'])
+                                                         '/c/windows/puppetlabs/puppet/embedded/gems',])
       }
     end
   end
@@ -39,13 +39,13 @@ describe 'extlib::mkdir_p' do
     end
     let(:facts) do
       {
-        kernel: 'linux'
+        kernel: 'linux',
       }
     end
 
     it {
       is_expected.to run.with_params(dirs).and_return(['/opt', '/opt/puppetlabs', '/opt/puppetlabs/puppet',
-                                                       '/opt/puppetlabs/puppet/embedded', '/opt/puppetlabs/puppet/embedded/bin', '/opt/puppetlabs/puppet/embedded/bin/gems'])
+                                                       '/opt/puppetlabs/puppet/embedded', '/opt/puppetlabs/puppet/embedded/bin', '/opt/puppetlabs/puppet/embedded/bin/gems',])
     }
 
     describe 'multiple_dirs' do
@@ -55,7 +55,7 @@ describe 'extlib::mkdir_p' do
       let(:expected_dirs) do
         ['/opt', '/opt/puppetlabs', '/opt/puppetlabs/puppet',
          '/opt/puppetlabs/puppet/embedded', '/opt/puppetlabs/puppet/embedded/bin',
-         '/opt/puppetlabs/puppet/embedded/bin/gems', '/tmp', '/tmp/gems']
+         '/opt/puppetlabs/puppet/embedded/bin/gems', '/tmp', '/tmp/gems',]
       end
 
       it { is_expected.to run.with_params(dirs).and_return(expected_dirs) }
@@ -65,7 +65,7 @@ describe 'extlib::mkdir_p' do
       let(:expected_dirs) do
         ['/opt', '/opt/puppetlabs', '/opt/puppetlabs/puppet',
          '/opt/puppetlabs/puppet/embedded', '/opt/puppetlabs/puppet/embedded/bin',
-         '/opt/puppetlabs/puppet/embedded/bin/gems', '/tmp', '/tmp/gems']
+         '/opt/puppetlabs/puppet/embedded/bin/gems', '/tmp', '/tmp/gems',]
       end
 
       it { is_expected.to run.with_params('/opt/puppetlabs/puppet/embedded/bin/gems', '/tmp/gems').and_return(expected_dirs) }
