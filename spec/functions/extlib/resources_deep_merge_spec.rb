@@ -8,15 +8,15 @@ describe 'extlib::resources_deep_merge' do
       'one' => {
         'attributes' => {
           'user' => '1',
-          'pass' => '1'
-        }
+          'pass' => '1',
+        },
       },
       'two' => {
         'attributes' => {
           'user' => '2',
-          'pass' => '2'
-        }
-      }
+          'pass' => '2',
+        },
+      },
     }
   end
 
@@ -24,8 +24,8 @@ describe 'extlib::resources_deep_merge' do
     {
       'ensure' => 'present',
       'attributes' => {
-        'type' => 'psql'
-      }
+        'type' => 'psql',
+      },
     }
   end
 
@@ -36,17 +36,17 @@ describe 'extlib::resources_deep_merge' do
         'attributes' => {
           'type' => 'psql',
           'user' => '1',
-          'pass' => '1'
-        }
+          'pass' => '1',
+        },
       },
       'two' => {
         'ensure' => 'present',
         'attributes' => {
           'type' => 'psql',
           'user' => '2',
-          'pass' => '2'
-        }
-      }
+          'pass' => '2',
+        },
+      },
     }
   end
 

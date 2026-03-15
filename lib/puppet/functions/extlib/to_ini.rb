@@ -40,7 +40,7 @@ Puppet::Functions.create_function(:'extlib::to_ini') do
       data[section].each do |k, v|
         v_is_a_boolean = (v.is_a?(TrueClass) or v.is_a?(FalseClass))
 
-        ini << if (v_is_a_boolean && !(settings['quote_booleans'])) || (v.is_a?(Numeric) && !(settings['quote_numerics']))
+        ini << if (v_is_a_boolean && !settings['quote_booleans']) || (v.is_a?(Numeric) && !settings['quote_numerics'])
                  "#{k}#{settings['key_val_separator']}#{v}"
                else
                  "#{k}#{settings['key_val_separator']}#{settings['quote_char']}#{v}#{settings['quote_char']}"

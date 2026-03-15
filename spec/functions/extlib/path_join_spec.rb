@@ -10,7 +10,7 @@ describe 'extlib::path_join' do
 
     let(:facts) do
       {
-        kernel: 'windows'
+        kernel: 'windows',
       }
     end
 
@@ -26,7 +26,7 @@ describe 'extlib::path_join' do
 
     let(:facts) do
       {
-        kernel: 'linux'
+        kernel: 'linux',
       }
     end
 
@@ -41,7 +41,7 @@ describe 'extlib::path_join' do
 
     let(:facts) do
       {
-        kernel: 'linux'
+        kernel: 'linux',
       }
     end
 

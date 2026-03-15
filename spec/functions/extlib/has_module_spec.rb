@@ -11,7 +11,7 @@ describe 'extlib::has_module' do
     [
       'puppet-extlib',
       'puppet/extlib',
-      'puppetlabs/stdlib'
+      'puppetlabs/stdlib',
     ].each do |good_module_name|
       it "returns true for #{good_module_name}" do
         is_expected.to run.with_params(good_module_name).and_return(true)

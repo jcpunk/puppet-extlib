@@ -13,7 +13,7 @@ describe 'extlib::to_ini' do
       'dev' => {
         'logging'      => 'DEBUG',
         'log_location' => '/var/log/dev.log',
-      }
+      },
     }
   end
 
@@ -95,7 +95,7 @@ describe 'extlib::to_ini' do
     let(:example_input) do
       {
         'foo' => {},
-        'bar' => {}
+        'bar' => {},
       }
     end
     let(:output) do
