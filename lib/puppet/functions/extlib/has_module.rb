@@ -14,7 +14,7 @@ Puppet::Functions.create_function(:'extlib::has_module') do
     return_type 'Boolean'
   end
 
-  def has_module(module_name)
+  def has_module(module_name) # rubocop:disable Naming/PredicatePrefix
     full_module_name = module_name.gsub(%r{/}, '-')
     module_name = full_module_name[%r{(?<=-).+}]
     begin
