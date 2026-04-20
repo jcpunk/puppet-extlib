@@ -46,7 +46,7 @@ Puppet::Functions.create_function(:'extlib::version_latest_endoflife') do
     data = get_eol(product, cycle)
 
     # For nicer output
-    cycle = cycle == :latest ? nil : " #{cycle}"
+    cycle = (cycle == :latest) ? nil : " #{cycle}"
     if data['isEol']
       since = " since #{data['eolFrom']}" if data['eolFrom']
       Puppet.warning "Latest version for #{product}#{cycle} is end-of-life#{since}"
