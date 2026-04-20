@@ -33,6 +33,7 @@ Thus making it directly usable with the values from facter.
 * [`extlib::remove_resource`](#extlib--remove_resource): Removes a Resource or an Array of Resources from the catalog.
 * [`extlib::resources_deep_merge`](#extlib--resources_deep_merge): Deeply merge a "defaults" hash into a "resources" hash like the ones expected by `create_resources()`.
 * [`extlib::sort_by_version`](#extlib--sort_by_version): A function that sorts an array of version numbers.
+* [`extlib::sort_hash_deep`](#extlib--sort_hash_deep): Recursively sorts a hash by keys to ensure deterministic ordering.
 * [`extlib::to_ini`](#extlib--to_ini): This converts a puppet hash to an INI string.
 
 Based on https://github.com/mmckinst/puppet-hash2stuff/blob/master/lib/puppet/parser/functions/hash2ini.rb
@@ -1311,6 +1312,56 @@ extlib::sort_by_version(['10.0.0b12', '10.0.0b3', '10.0.0a2', '9.0.10', '9.0.3']
 Data type: `Array[String]`
 
 An array of version strings you want sorted.
+
+### <a name="extlib--sort_hash_deep"></a>`extlib::sort_hash_deep`
+
+Type: Ruby 4.x API
+
+Recursively sorts a hash by keys to ensure deterministic ordering.
+
+#### Examples
+
+##### Basic usage
+
+```puppet
+extlib::sort_hash_deep({'b' => 1, 'a' => 2})
+# => {'a' => 2, 'b' => 1}
+```
+
+##### Nested structures
+
+```puppet
+extlib::sort_hash_deep({'z' => {'b' => 2, 'a' => 1}})
+# => {'z' => {'a' => 1, 'b' => 2}}
+```
+
+#### `extlib::sort_hash_deep(Hash $input)`
+
+The extlib::sort_hash_deep function.
+
+Returns: `Hash`
+
+##### Examples
+
+###### Basic usage
+
+```puppet
+extlib::sort_hash_deep({'b' => 1, 'a' => 2})
+# => {'a' => 2, 'b' => 1}
+```
+
+###### Nested structures
+
+```puppet
+extlib::sort_hash_deep({'z' => {'b' => 2, 'a' => 1}})
+# => {'z' => {'a' => 1, 'b' => 2}}
+```
+
+##### `input`
+
+Data type: `Hash`
+
+
 
 ### <a name="extlib--to_ini"></a>`extlib::to_ini`
 
