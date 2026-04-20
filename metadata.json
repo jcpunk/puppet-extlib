@@ -31,7 +31,8 @@
       "operatingsystemrelease": [
         "7",
         "8",
-        "9"
+        "9",
+        "10"
       ]
     },
     {
@@ -39,15 +40,24 @@
       "operatingsystemrelease": [
         "7",
         "8",
-        "9"
+        "9",
+        "10"
+      ]
+    },
+    {
+      "operatingsystem": "AlmaLinux",
+      "operatingsystemrelease": [
+        "8",
+        "9",
+        "10"
       ]
     },
     {
       "operatingsystem": "Rocky",
       "operatingsystemrelease": [
-        "7",
         "8",
-        "9"
+        "9",
+        "10"
       ]
     },
     {
