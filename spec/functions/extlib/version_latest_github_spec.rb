@@ -18,7 +18,7 @@ describe 'extlib::version_latest_github' do
       { tag_name: '8.19.1' },
       { tag_name: '7.37.1' },
       { tag_name: '7.37.0' },
-      { tag_name: '8.19.0' }
+      { tag_name: '8.19.0' },
     ]
   end
 

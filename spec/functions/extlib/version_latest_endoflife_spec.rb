@@ -24,10 +24,10 @@ describe 'extlib::version_latest_endoflife' do
         latest: {
           name: '1.34.1',
           date: '2025-09-09',
-          link: 'https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.34.md'
+          link: 'https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.34.md',
         },
-        custom: nil
-      }
+        custom: nil,
+      },
     }
   end
 
@@ -69,10 +69,10 @@ describe 'extlib::version_latest_endoflife' do
           latest: {
             name: '1.30.14',
             date: '2025-06-17',
-            link: 'https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.30.md'
+            link: 'https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.30.md',
           },
-          custom: nil
-        }
+          custom: nil,
+        },
       }
     end
 

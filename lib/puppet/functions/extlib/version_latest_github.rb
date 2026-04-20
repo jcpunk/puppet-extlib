@@ -48,7 +48,7 @@ Puppet::Functions.create_function(:'extlib::version_latest_github') do
       if version.count('.') < 2
         # Handle semver-like version numbers (e.g. Version 2, Version 1.5, Version 0.4)
         parts = version.split '.'
-        parts.map! { |part| part =~ %r{^\d+$} ? part.to_i : part }
+        parts.map! { |part| (part =~ %r{^\d+$}) ? part.to_i : part }
         parts << 0 until parts.size >= 3
         version = parts.join '.'
       end
